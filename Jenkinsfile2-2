@@ -24,6 +24,7 @@ pipeline {
         }
     }
   }
+  }
   post{
     always{
     echo 'Prints wether deploy happened or not, sucess or failute'
