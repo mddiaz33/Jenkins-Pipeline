@@ -16,11 +16,10 @@ pipeline {
         }
     }
       stage('Deploy') {
-               steps {
+            steps {
                 input('Deploy?')
-            }
-    }
-     }
+             }
+      }
   }
   post{
     always{
