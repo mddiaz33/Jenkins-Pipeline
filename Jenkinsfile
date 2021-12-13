@@ -2,24 +2,13 @@ pipeline {
   agent any
   stages {
     stage('Stage1') {
-      parallel {
-        stage('Stage1') {
-          steps {
-            sh 'echo "This is $BUILD_NUMBER of demo $DEMO"'
-          }
-        }
-
-        stage('error') {
-          steps {
-            sh 'echo "This is $BUILD_NUMBER of DEMO $DEMO"'
-          }
-        }
-
+      steps {
+        sh 'echo "This is build number $BUILD_NUMBERÂ of demo $DEMO"'
       }
     }
 
   }
   environment {
-    DEMO = '1'
+    DEMO = '1.2'
   }
 }
