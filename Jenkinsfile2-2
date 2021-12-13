@@ -16,7 +16,9 @@ pipeline {
         }
     }
       stage('Deploy') {
+      steps{
        echo "Deploying release ${RELEASE}..."
+       }
      }
   }
   post{
