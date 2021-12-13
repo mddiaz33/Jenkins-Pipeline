@@ -11,14 +11,22 @@ pipeline {
         }
     }
       stage('Test') {
-       agent any
-       environment {
-        LOG_LEVEL='TEST'
-      }
       steps {
-        echo "Building release ${RELEASE} with log level ${LOG_LEVEL}..."
+        echo "Building release ${RELEASE}..."
         }
     }
+      stage('Deploy') {
+      input {
+        message: 'Deploy?'
+        ok 'Do it!'
+        parameters{
+          string(name: 'TARGET_ENVIRONMENT', defaultValue: 'PROD', description: 'Target deployment environment')
+        }
+    }
+  }
+  post{
+    always{
+    echo 'Prints wether deploy happened or not, sucess or failute'
   }
     environment {
       RELEASE = '20.04'
