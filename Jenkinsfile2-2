@@ -28,6 +28,7 @@ pipeline {
     always{
     echo 'Prints wether deploy happened or not, sucess or failute'
   }
+  }
     environment {
       RELEASE = '20.04'
   }
