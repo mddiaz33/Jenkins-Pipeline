@@ -19,7 +19,6 @@ pipeline {
                steps {
                 input('Deploy?')
             }
-    }
      }
   }
   post{
