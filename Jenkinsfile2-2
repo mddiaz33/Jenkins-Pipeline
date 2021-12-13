@@ -16,9 +16,13 @@ pipeline {
         }
     }
       stage('Deploy') {
-            steps {
-                input('Deploy?')
-             }
+            input {
+                message "What are we deploying today?"
+                ok "Deploy"
+                parameters {
+                  string(name: 'TARGET_ENVIRONMENT, defaultValue: 'PROD', description: 'Target deployment environment')
+                }
+            }
       }
   }
   post{
