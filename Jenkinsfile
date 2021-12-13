@@ -9,5 +9,6 @@ pipeline {
   }
     environment {
       RELEASE = '20.04'
+      LOG_LEVEL='ENV'
   }
 }
