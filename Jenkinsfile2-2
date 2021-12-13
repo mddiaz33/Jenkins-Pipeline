@@ -20,7 +20,7 @@ pipeline {
                 message "What are we deploying today?"
                 ok "Deploy"
                 parameters {
-                  string(name: 'TARGET_ENVIRONMENT, defaultValue: 'PROD', description: 'Target deployment environment')
+                  string(name: 'TARGET_ENVIRONMENT', defaultValue: 'PROD', description: 'Target deployment environment')
                 }
             }
       }
