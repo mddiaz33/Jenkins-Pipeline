@@ -11,14 +11,18 @@ pipeline {
         }
     }
       stage('Test') {
-      steps {
-        echo "Testing release ${RELEASE}..."
+        steps {
+          echo "Testing release ${RELEASE}..."
         }
     }
       stage('Deploy') {
-      steps{
-       echo "Deploying release ${RELEASE}..."
-       }
+        input {
+          message 'Deploy?'
+          ok 'Do it!'
+          parameters{
+            string(name: 'TARGET_ENVIRONMENT', defaultValue: 'PROD', description: 'Target deployment environment')
+          }
+    }
      }
   }
   post{
