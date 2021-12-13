@@ -5,11 +5,11 @@ pipeline {
       parallel {
         stage('Stage1') {
           steps {
-            sh 'echo "This is $BUILD_Number of demo $DEMO"'
+            sh 'echo "This is $BUILD_NUMBER of demo $DEMO"'
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
             sh 'echo "This is $BUILD_NUMBER of DEMO $DEMO"'
           }
