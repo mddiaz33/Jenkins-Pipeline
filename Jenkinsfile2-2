@@ -16,11 +16,9 @@ pipeline {
         }
     }
       stage('Deploy') {
-        input (
-          message 'Deploy?'
-          parameters{
-            string(name: 'TARGET_ENVIRONMENT')
-          )
+               steps {
+                input('Deploy?')
+            }
     }
      }
   }
